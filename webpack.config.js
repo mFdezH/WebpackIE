@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const config = {
-  entry: ['core-js/stable', './src/index.js'],
-  devtool: 'inline-source-map',
+  entry: ['./src/index.js'],
+  // devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -30,12 +30,12 @@ const config = {
   module: {
     rules: [
       {
-        test: '/\.ts(x)?$/',
+        test: /\.ts(x)?$/,
         loader: 'ts-loader',
         exclude: '/node_modules/'
       },
       {
-        test: '/\.tsx?$/',
+        test: /\.(ts|js)$/,
         use: [
             {
                 loader: 'babel-loader',
@@ -44,22 +44,17 @@ const config = {
                   presets: [
                     ['@babel/preset-env',
                     {
-                    targets: {
-                    
-                    
-                    browsers: '> 0.25%, IE 11, not dead',
-                    
-                    
-                    }
-                    
-                    
+                      targets: {
+
+                        browsers: '> 0.25%, IE 11, not dead',
+       
+                      }
+
                     }]
-                    
-                    
-                    ],
-                    
-                    
-                    plugins: [
+
+                  ],
+                  
+                  plugins: [
                     
                     
                     ['@babel/plugin-transform-runtime',
