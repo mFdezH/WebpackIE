@@ -29,11 +29,11 @@ const config = {
 
   module: {
     rules: [
-      {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
-        exclude: '/node_modules/'
-      },
+      // {
+      //   test: /\.ts(x)?$/,
+      //   loader: 'ts-loader',
+      //   exclude: '/node_modules/'
+      // },
       {
         test: /\.(ts|js)$/,
         use: [
@@ -71,7 +71,7 @@ const config = {
                 }
             }
         ],
-        exclude: '/node_modules/'
+        exclude: /node_modules\/(?!(lit-element|lit-html)\/).*/,
     }
     ]
     

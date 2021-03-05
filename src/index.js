@@ -1,4 +1,4 @@
-// import './hola-mundo.js';
+ import './hola-mundo.js';
 // import './index.ts';
 import './useless-button.js'
 
